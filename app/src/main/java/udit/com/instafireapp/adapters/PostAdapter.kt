@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.post_layout.view.*
 import udit.com.instafireapp.R
 import udit.com.instafireapp.models.Posts
 
-class PostAdapter(val context: Context, val posts: List<Posts>) :
+class PostAdapter(val context: Context, private val posts: List<Posts>) :
     RecyclerView.Adapter<PostAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
