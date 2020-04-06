@@ -11,7 +11,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_main.*
 import udit.com.instafireapp.adapters.PostAdapter
-import udit.com.instafireapp.models.Posts
+import udit.com.instafireapp.models.Post
 
 private const val TAG = "MainActivity"
 
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private lateinit var firebaseDb: FirebaseFirestore
-    private lateinit var posts: MutableList<Posts>
+    private lateinit var posts: MutableList<Post>
     private lateinit var postAdapter: PostAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 return@addSnapshotListener
             }
 
-            val postList = snapshot.toObjects(Posts::class.java)
+            val postList = snapshot.toObjects(Post::class.java)
             posts.clear()
             posts.addAll(postList)
             postAdapter.notifyDataSetChanged()

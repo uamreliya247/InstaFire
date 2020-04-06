@@ -1,6 +1,6 @@
 package udit.com.instafireapp.models
 
-data class Users(
+data class User(
     var age: Int = 0,
     var username: String = ""
 )

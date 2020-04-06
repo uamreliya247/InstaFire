@@ -1,8 +1,8 @@
 package udit.com.instafireapp.models
 
-data class Posts(
+data class Post(
     var description: String = "",
     var creationTime: Long = 0,
     var image: String = "",
-    var user: Users? = null
+    var user: User? = null
 )

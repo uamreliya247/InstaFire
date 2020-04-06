@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.post_layout.view.*
 import udit.com.instafireapp.R
-import udit.com.instafireapp.models.Posts
+import udit.com.instafireapp.models.Post
 
-class PostAdapter(val context: Context, private val posts: List<Posts>) :
+class PostAdapter(val context: Context, private val posts: List<Post>) :
     RecyclerView.Adapter<PostAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -26,14 +26,14 @@ class PostAdapter(val context: Context, private val posts: List<Posts>) :
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(posts: Posts) {
-            itemView.tvUserName.text = posts.user?.username
-            itemView.tvDescription.text = posts.description
+        fun bind(post: Post) {
+            itemView.tvUserName.text = post.user?.username
+            itemView.tvDescription.text = post.description
             Glide.with(context)
-                .load(posts.image)
+                .load(post.image)
                 .into(itemView.ivPostImage)
 
-            itemView.tvCreationTime.text = DateUtils.getRelativeTimeSpanString(posts.creationTime)
+            itemView.tvCreationTime.text = DateUtils.getRelativeTimeSpanString(post.creationTime)
         }
     }
 }
